@@ -28,7 +28,5 @@ class MainActivity : AppCompatActivity() {
 
         // Das Binding zur XML-Datei
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        // todo
     }
 }
