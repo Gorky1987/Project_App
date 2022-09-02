@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     /* -------------------- Lifecycle -------------------- */
 
@@ -28,5 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         // Das Binding zur XML-Datei
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+//        navController = findNavController(R.id.main_fragment)
+//
+//        setupActionBarWithNavController(navController)
+    }
+
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp() || super.onSupportNavigateUp()
+//    }
+
+    fun setToolBar(title: String) {
+        binding.toolbarText.text = title
     }
 }

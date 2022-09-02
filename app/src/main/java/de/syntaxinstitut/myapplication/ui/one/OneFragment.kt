@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import de.syntaxinstitut.myapplication.MainActivity
 import de.syntaxinstitut.myapplication.R
 import de.syntaxinstitut.myapplication.databinding.FragmentOneBinding
 
@@ -41,6 +42,11 @@ class OneFragment : Fragment(R.layout.fragment_one) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_one, container, false)
 
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as MainActivity).setToolBar("home")
     }
 
     /**

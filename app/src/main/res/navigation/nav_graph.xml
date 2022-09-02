@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+    android:label="Home"
     app:startDestination="@id/oneFragment">
 
     <fragment
         android:id="@+id/oneFragment"
         android:name="de.syntaxinstitut.myapplication.ui.one.OneFragment"
-        android:label="OneFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_one">
         <action
             android:id="@+id/action_oneFragment_to_twoFragment"
@@ -17,6 +18,6 @@
     <fragment
         android:id="@+id/twoFragment"
         android:name="de.syntaxinstitut.myapplication.ui.two.TwoFragment"
-        android:label="TwoFragment"
-        tools:layout="@layout/fragment_two"/>
+        android:label="Detail"
+        tools:layout="@layout/fragment_two" />
 </navigation>

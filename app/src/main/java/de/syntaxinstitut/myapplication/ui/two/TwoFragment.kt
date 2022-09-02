@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import de.syntaxinstitut.myapplication.MainActivity
 import de.syntaxinstitut.myapplication.R
-import de.syntaxinstitut.myapplication.databinding.FragmentOneBinding
 import de.syntaxinstitut.myapplication.databinding.FragmentTwoBinding
 
 /**
@@ -37,8 +37,16 @@ class TwoFragment : Fragment(R.layout.fragment_two) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_two, container, false)
 
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as MainActivity).setToolBar("detail")
+
     }
 }
