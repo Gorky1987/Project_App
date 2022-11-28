@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "746056972588",
+    "project_id": "android-studio-app-projekt",
+    "storage_bucket": "android-studio-app-projekt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746056972588:android:4ca224bdd75c29a5705489",
+        "android_client_info": {
+          "package_name": "de.syntaxinstitut.project_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746056972588-i4qtsh6r07g7a5k4ddhm1tu9tkf4daqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.syntaxinstitut.project_app",
+            "certificate_hash": "740ce0fa76a4bca69175d786435589d09c80d0a2"
+          }
+        },
+        {
+          "client_id": "746056972588-tsq7msoh9fa0unh6gm89j5rceojtqcc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNPhIGXqDEHEAFo7xKisLK3slLR4udjkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746056972588-tsq7msoh9fa0unh6gm89j5rceojtqcc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
