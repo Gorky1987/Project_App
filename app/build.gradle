@@ -37,6 +37,7 @@ android {
     buildFeatures {
         dataBinding true
     }
+    namespace 'de.syntaxinstitut.project_app'
 }
 
 dependencies {

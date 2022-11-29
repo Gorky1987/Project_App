@@ -6,16 +6,16 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Blog (
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
 
     var id : Int,
-    var blog_number: String?,
-    var titel : String?,
-    var subTitel : String?,
-    var content_titel : String?,
-    var content : String?,
-    var titel_Image : Int?,
-    var icon : Int?
+    var blog_number: String,
+    var titel : String,
+    var subTitel : String,
+    var content_titel : String,
+    var content : String,
+    var titel_Image : Int,
+
         )
 {
 

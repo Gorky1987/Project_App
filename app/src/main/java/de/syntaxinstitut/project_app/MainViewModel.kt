@@ -37,8 +37,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             delay(2000)
             _isLoading.value = false
+            repository.fillTableIfEmpty()
         }
     }
+
+
 
     // Kommunikationspunkt mit der Firestore Datenbank
     private val db = FirebaseFirestore.getInstance()
@@ -68,6 +71,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 private val _item = MutableLiveData<Repository>()
     val item: LiveData<Repository>
     get() = _item
+
+
 
     // hier wird versucht einen User zu erstellen um diesen anschließend auch gleich
     // einzuloggen
@@ -143,14 +148,12 @@ private val _item = MutableLiveData<Repository>()
     }
 
 
-    fun getBlog(id: Int){
+    fun getAllBlogs():List<Blog>{
 
-        viewModelScope.launch {
-
-            repository.getBlog(id)
+           return repository.initialBlog()
 
         }
-    }
+
 
     fun insertBlog(blog: Blog) {
 

@@ -11,9 +11,9 @@ import de.syntaxinstitut.project_app.R
 import de.syntaxinstitut.project_app.data.datamodels.Blog
 import de.syntaxinstitut.project_app.databinding.ActivityMainBinding
 
-class BlogAdapter():RecyclerView.Adapter<BlogAdapter.ItemViewHolder>() {
+class BlogAdapter( private var dataset : List<Blog>):RecyclerView.Adapter<BlogAdapter.ItemViewHolder>() {
 
-private var dataset = listOf<Blog>()
+
 
 
     private lateinit var binding: ActivityMainBinding
@@ -26,7 +26,7 @@ private var dataset = listOf<Blog>()
         val subTitel : TextView = view.findViewById(R.id.tv_SubTitel)
         val contentTitel : TextView = view.findViewById(R.id.tv_content_titel)
         val content : TextView = view.findViewById(R.id.tv_content)
-        val iconImg : ImageView = view.findViewById(R.id.iv_icon)
+        // val iconImg : ImageView = view.findViewById(R.id.iv_icon)
         val itemImg : ImageView = view.findViewById(R.id.iv_titel_Image)
 
     }
@@ -63,7 +63,7 @@ private var dataset = listOf<Blog>()
         holder.subTitel.text = item.subTitel
         holder.contentTitel.text = item.content_titel
         holder.content.text = item.content
-        item.icon?.let { holder.iconImg.setImageResource(it) }
+        //      item.icon?.let { holder.iconImg.setImageResource(it) }
         item.titel_Image?.let { holder.itemImg.setImageResource(it) }
 
 

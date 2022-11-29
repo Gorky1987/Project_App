@@ -28,8 +28,6 @@ class ProfilFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
-
         (activity as MainActivity).showUI()
     }
 

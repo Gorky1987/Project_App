@@ -30,4 +30,7 @@ interface BlogDatabaseDao  {
 
     @Query("DELETE from Blog")
     suspend fun deleteAll()
+
+    @Query("SELECT CASE WHEN EXISTS(SELECT 1 FROM Blog) THEN 0 ELSE 1 END")
+    suspend fun isEmpty (): Boolean
 }

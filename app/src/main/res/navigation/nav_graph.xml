@@ -52,7 +52,7 @@
         tools:layout="@layout/fragment_fact" />
     <fragment
         android:id="@+id/blogFragment"
-        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.BlogFragment"
+        android:name="de.syntaxinstitut.project_app.ui.BlogFragments.BlogFragment"
         android:label="fragment_blog"
         tools:layout="@layout/fragment_blog" />
     <fragment
@@ -60,4 +60,34 @@
         android:name="de.syntaxinstitut.project_app.ui.DetailFragments.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/familyGymFragment"
+        android:name="de.syntaxinstitut.project_app.FamilyGymFragment"
+        android:label="fragment_family_gym"
+        tools:layout="@layout/fragment_family_gym" />
+    <fragment
+        android:id="@+id/luxuryGymFragment"
+        android:name="de.syntaxinstitut.project_app.LuxuryGymFragment"
+        android:label="fragment_luxury_gym"
+        tools:layout="@layout/fragment_luxury_gym" />
+    <fragment
+        android:id="@+id/discountFragment"
+        android:name="de.syntaxinstitut.project_app.DiscountFragment"
+        android:label="fragment_discount"
+        tools:layout="@layout/fragment_discount" />
+    <fragment
+        android:id="@+id/womansGymFragment"
+        android:name="de.syntaxinstitut.project_app.WomansGymFragment"
+        android:label="fragment_womans_gym"
+        tools:layout="@layout/fragment_womans_gym" />
+    <fragment
+        android:id="@+id/bodybuilderGymFragment"
+        android:name="de.syntaxinstitut.project_app.BodybuilderGymFragment"
+        android:label="fragment_bodybuilder_gym"
+        tools:layout="@layout/fragment_bodybuilder_gym" />
+    <fragment
+        android:id="@+id/sportClubFragment"
+        android:name="de.syntaxinstitut.project_app.SportClubFragment"
+        android:label="fragment_sport_club"
+        tools:layout="@layout/fragment_sport_club" />
 </navigation>
