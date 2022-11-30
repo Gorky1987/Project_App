@@ -1,12 +1,16 @@
 package de.syntaxinstitut.project_app.data.repository
 
+import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import de.syntaxinstitut.project_app.R
+import de.syntaxinstitut.project_app.data.GymSearchApi
 
 
 import de.syntaxinstitut.project_app.data.datamodels.Blog
+import de.syntaxinstitut.project_app.data.datamodels.GymSearch
+import de.syntaxinstitut.project_app.data.datamodels.GymSearchList
 import de.syntaxinstitut.project_app.data.hView_Item
 import de.syntaxinstitut.project_app.data.room.BlogDatabase
 
@@ -14,6 +18,8 @@ import de.syntaxinstitut.project_app.data.room.BlogDatabase
 const val TAG = "Repository"
 
 class Repository(private val database: BlogDatabase) {
+
+    val api = GymSearchApi
 
     val blogList: LiveData<List<Blog>> = database.blogDatabaseDao.getAll()
 
@@ -59,7 +65,6 @@ class Repository(private val database: BlogDatabase) {
                 1, "Blog #1", "Personal Trainer", "Aufgaben eines..-",
                 "Zu Beachten:", "                                                   \n" +
                         "                                                                     \n" +
-                        "\n" +
                         "Aufgaben eines Fitnesstrainers\n" +
                         "\n" +
                         "\n" +
@@ -75,8 +80,6 @@ class Repository(private val database: BlogDatabase) {
                         "Der Ablauf\n" +
                         "\n" +
                         "Zunächst wird für jeden Kunde ein individueller Trainingsplan aufgestellt, hier wird die aktuelle körperliche Fitness sowie Verletzungen und Krankheitsbilder berücksichtigt. Auch die Krankengeschichte wird beachtet, um so einen möglichst perfekt abgestimmten Trainingsplan zu erhalten.\n" +
-                        "\n" +
-                        "\n" +
                         "\n" +
                         "\n" +
                         "\n" +
@@ -99,7 +102,6 @@ class Repository(private val database: BlogDatabase) {
                 "was ist es?",
                 "Was ist Mobility Training?",
                 "\n" +
-                        "\n" +
                         "Mobility Training kombiniert verschiedene Beweglichkeitsübungen, die den Bewegungsradius deines Körpers vergrößern. Dazu gehören Flexibilität, Gleichgewicht, Geschmeidigkeit und Kraft. Die Kombination ist der beste Weg, um Verletzungen vorzubeugen. \n" +
                         "\n" +
                         "Ein riesiger Vorteil von Mobility Training ist seine Vielfalt. Du kannst es einfach an deine Bedürfnisse und deine Routine anpassen. Eine pre-Workout Beweglichkeitsübung, ein 10-minütiges Ganzkörpertraining, oder eine vollständige Yoga-Session – Entscheide du, was du gerade brauchst.\n" +
@@ -124,8 +126,6 @@ class Repository(private val database: BlogDatabase) {
                 "kann auch für die Umwelt gut sein...",
                 "Gesunde & nachhaltige Ernährung",
                 "\n" +
-                        "\n" +
-                        "\n" +
                         "Gesunde Ernährung kann auch für die Umwelt gut sein! Erfahre hier, wie Du Dich gesund und gleichzeitig umweltfreundlich ernähren kannst. \n" +
                         "\n" +
                         "Wusstest Du, dass gesunde Ernährung auch oft besser für die Umwelt ist? Du tust dabei nicht nur Deinem Körper etwas gutes, sondern sparst auch CO2- Ausstoß und Müll. Wir haben 3 Tipps für Dich, um Deine Ernährung zu verbessern und gleichzeitig die Umwelt zu schützen:\n" +
@@ -157,8 +157,6 @@ class Repository(private val database: BlogDatabase) {
                 "oft unterschätzt...",
                 "Cardiovaskuläres Training",
                 "\n" +
-                        "\n" +
-                        "\n" +
                         "\n" +
                         "Cardio – Was ist das eigentlich und wofür ist das Ausdauertraining gut?\n" +
                         "\n" +
@@ -250,5 +248,18 @@ class Repository(private val database: BlogDatabase) {
                 R.drawable._7_item
             ),
         )
+    }
+
+    private val _gymSearch = MutableLiveData<List<GymSearch>>()
+    val gymSearch: LiveData<List<GymSearch>>
+        get() = _gymSearch
+
+    suspend fun getGymSearch(plz: String) {
+        try {
+            val result = api.retrofitService.getGymSearch("Gym+$plz")
+            _gymSearch.value = result.searchList
+        } catch (e: Exception) {
+            Log.e(ContentValues.TAG, "Error loading Gym results from API: $e")
+        }
     }
 }

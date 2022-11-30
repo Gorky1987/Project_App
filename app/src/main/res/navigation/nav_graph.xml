@@ -44,7 +44,26 @@
         android:id="@+id/gymDifferenceFragment"
         android:name="de.syntaxinstitut.project_app.ui.DetailFragments.GymDifferenceFragment"
         android:label="gymDifferenceFragment"
-        tools:layout="@layout/fragment_gym_difference" />
+        tools:layout="@layout/fragment_gym_difference" >
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_luxuryGymFragment"
+            app:destination="@id/luxuryGymFragment" />
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_familyGymFragment"
+            app:destination="@id/familyGymFragment" />
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_bodybuilderGymFragment"
+            app:destination="@id/bodybuilderGymFragment" />
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_sportClubFragment"
+            app:destination="@id/sportClubFragment" />
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_discountFragment"
+            app:destination="@id/discountFragment" />
+        <action
+            android:id="@+id/action_gymDifferenceFragment_to_womansGymFragment"
+            app:destination="@id/womansGymFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fatcFragment"
         android:name="de.syntaxinstitut.project_app.ui.DetailFragments.FactFragment"
@@ -62,32 +81,56 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/familyGymFragment"
-        android:name="de.syntaxinstitut.project_app.FamilyGymFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.FamilyGymFragment"
         android:label="fragment_family_gym"
-        tools:layout="@layout/fragment_family_gym" />
+        tools:layout="@layout/fragment_family_gym" >
+        <action
+            android:id="@+id/action_familyGymFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/luxuryGymFragment"
-        android:name="de.syntaxinstitut.project_app.LuxuryGymFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.LuxuryGymFragment"
         android:label="fragment_luxury_gym"
-        tools:layout="@layout/fragment_luxury_gym" />
+        tools:layout="@layout/fragment_luxury_gym" >
+        <action
+            android:id="@+id/action_luxuryGymFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/discountFragment"
-        android:name="de.syntaxinstitut.project_app.DiscountFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.DiscountFragment"
         android:label="fragment_discount"
-        tools:layout="@layout/fragment_discount" />
+        tools:layout="@layout/fragment_discount" >
+        <action
+            android:id="@+id/action_discountFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/womansGymFragment"
-        android:name="de.syntaxinstitut.project_app.WomansGymFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.WomansGymFragment"
         android:label="fragment_womans_gym"
-        tools:layout="@layout/fragment_womans_gym" />
+        tools:layout="@layout/fragment_womans_gym" >
+        <action
+            android:id="@+id/action_womansGymFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bodybuilderGymFragment"
-        android:name="de.syntaxinstitut.project_app.BodybuilderGymFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.BodybuilderGymFragment"
         android:label="fragment_bodybuilder_gym"
-        tools:layout="@layout/fragment_bodybuilder_gym" />
+        tools:layout="@layout/fragment_bodybuilder_gym" >
+        <action
+            android:id="@+id/action_bodybuilderGymFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sportClubFragment"
-        android:name="de.syntaxinstitut.project_app.SportClubFragment"
+        android:name="de.syntaxinstitut.project_app.ui.DetailFragments.SportClubFragment"
         android:label="fragment_sport_club"
-        tools:layout="@layout/fragment_sport_club" />
+        tools:layout="@layout/fragment_sport_club" >
+        <action
+            android:id="@+id/action_sportClubFragment_to_gymDifferenceFragment"
+            app:destination="@id/gymDifferenceFragment" />
+    </fragment>
 </navigation>

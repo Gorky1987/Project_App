@@ -1,26 +1,26 @@
 package de.syntaxinstitut.project_app.ui.DetailFragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.project_app.MainActivity
 import de.syntaxinstitut.project_app.MainViewModel
-import de.syntaxinstitut.project_app.R
-import de.syntaxinstitut.project_app.databinding.FragmentGymDifferenceBinding
+import de.syntaxinstitut.project_app.databinding.FragmentDiscountBinding
+import de.syntaxinstitut.project_app.databinding.FragmentSportClubBinding
 
+class SportClubFragment: Fragment() {
 
-class GymDifferenceFragment : Fragment() {
-
-    private lateinit var binding: FragmentGymDifferenceBinding
+    private lateinit var binding: FragmentSportClubBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var navController: NavController
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -28,28 +28,22 @@ class GymDifferenceFragment : Fragment() {
         (activity as MainActivity).showUI()
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-        binding = FragmentGymDifferenceBinding.inflate(inflater, container, false)
+        binding = FragmentSportClubBinding.inflate(inflater, container, false)
 
         return binding.root
+
     }
-
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.IV1.setOnClickListener(){
-            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToFamilyGymFragment())
-        }
-
-        binding.IV2.setOnClickListener(){
-            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToLuxuryGymFragment())
+        binding.imageButtonBack6.setOnClickListener(){
+            findNavController().navigate(SportClubFragmentDirections.actionSportClubFragmentToGymDifferenceFragment())
         }
     }
 }

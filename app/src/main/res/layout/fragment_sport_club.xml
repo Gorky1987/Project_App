@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SportClubFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".FamilyGymFragment">
 
-</FrameLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/unterschiede_06"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="175dp"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Sports Club"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/imageView30"
+                        app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="347dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="168dp"
+                        android:text="Die folgenden Informationen verschaffen Ihnen einen ersten Eindruck von unserer Abteilung. Gerne können Sie uns auch anschreiben, anrufen oder einfach vorbeischauen.
+Die Tennisanlage befindet sich auf einem großem Sportgelände in Wilmersdorf im Bereich Forckenbeckstraße, Cunostraße und Fritz-Wildung-Straße. Der Eingang zur Anlage und zum Clubhaus liegt in der Cunostraße 28 zwischen der Ruhemann-Sporthalle und der Tennishalle.
+Wir wünschen uns allerdings nicht nur neue Mitglieder, die ihre Beiträge pünktlich bezahlen. Unser Interesse gilt vor allem jenen, die auch aktiv am Clubleben teilnehmen möchten. Sollte beides auf Sie zutreffen, freuen wir uns über Ihre Bewerbung per Brief oder E-Mail an den BSC oder einen der Ansprechpartner.
+"
+                        android:textColor="#000000"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonBack6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.797"
+                        app:layout_constraintStart_toEndOf="@+id/textView40"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="412dp"
+                        android:layout_height="240dp"
+                        android:layout_marginTop="16dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/woman_01"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+</layout>

@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import de.syntaxinstitut.project_app.data.GymSearchApi
 import de.syntaxinstitut.project_app.data.Member
 import de.syntaxinstitut.project_app.data.datamodels.Blog
 import de.syntaxinstitut.project_app.data.repository.Repository
@@ -28,6 +29,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
     val database = getDatabase(application)
+
     val repository = Repository(database)
 
     private val _isLoading = MutableStateFlow(true)
@@ -40,7 +42,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             repository.fillTableIfEmpty()
         }
     }
-
 
 
     // Kommunikationspunkt mit der Firestore Datenbank
@@ -68,10 +69,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val blogList = repository.blogList
 
-private val _item = MutableLiveData<Repository>()
+    private val _item = MutableLiveData<Repository>()
     val item: LiveData<Repository>
-    get() = _item
-
+        get() = _item
 
 
     // hier wird versucht einen User zu erstellen um diesen anschließend auch gleich
@@ -141,18 +141,18 @@ private val _item = MutableLiveData<Repository>()
     }
 
 
-    fun getMember(){
+    fun getMember() {
         db.collection("user").document(currentUser.value!!.uid).get().addOnSuccessListener {
             _member.value = it.toObject(Member::class.java)
         }
     }
 
 
-    fun getAllBlogs():List<Blog>{
+    fun getAllBlogs(): List<Blog> {
 
-           return repository.initialBlog()
+        return repository.initialBlog()
 
-        }
+    }
 
 
     fun insertBlog(blog: Blog) {
@@ -165,10 +165,15 @@ private val _item = MutableLiveData<Repository>()
     }
 
 
+    var gymSearch = repository.gymSearch
+
+    fun loadGymSearch(plz : String) {
+        viewModelScope.launch {
+            repository.getGymSearch(plz)
+        }
 
 
-
-
+    }
 }
 
 
