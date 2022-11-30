@@ -11,60 +11,79 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tv_search_subText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.118"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="41dp" />
-
-            <TextView
-                android:id="@+id/tv_search_titel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/tv_search_subText"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tv_search_subText"
-                tools:layout_editor_absoluteY="84dp" />
-
-            <TextView
-                android:id="@+id/tv_search_adress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/tv_search_titel"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tv_search_titel"
-                tools:layout_editor_absoluteY="103dp" />
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/iv_search_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="320dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tv_rating"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_search_subText"
+                android:layout_width="319dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/iv_search_img"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_search_adress"
+                app:layout_constraintTop_toBottomOf="@+id/tv_search_adress" />
+
+            <TextView
+                android:id="@+id/tv_search_titel"
+                android:layout_width="254dp"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="64dp" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/iv_search_img"
+                app:layout_constraintTop_toBottomOf="@+id/iv_search_img" />
+
+            <TextView
+                android:id="@+id/tv_search_adress"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/iv_search_img"
+                app:layout_constraintStart_toStartOf="@+id/tv_search_titel"
+                app:layout_constraintTop_toBottomOf="@+id/tv_search_titel" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="40dp"
+                android:layout_height="23dp"
+                android:text="TextView"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/iv_search_img"
+                app:layout_constraintTop_toBottomOf="@+id/iv_search_img" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_search_img"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/iv_search_img"
+                app:layout_constraintTop_toBottomOf="@+id/iv_search_img"
+                app:srcCompat="@drawable/ic_baseline_star_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

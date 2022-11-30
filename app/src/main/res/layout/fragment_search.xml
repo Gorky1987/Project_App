@@ -16,25 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btn_gymSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:text="Button"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
-                app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-                app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
-
             <EditText
                 android:id="@+id/editTextNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="242dp"
+                android:layout_height="47dp"
                 android:layout_marginTop="20dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.174"
+                app:layout_constraintHorizontal_bias="0.293"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -53,6 +43,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
                 tools:listitem="@layout/search_item" />
+
+            <ImageButton
+                android:id="@+id/btn_gymSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+                app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+                app:layout_constraintTop_toTopOf="@+id/editTextNumber"
+                app:srcCompat="@drawable/ic_baseline_search_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>
