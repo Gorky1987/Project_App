@@ -52,7 +52,7 @@
                         android:layout_width="347dp"
                         android:layout_height="0dp"
                         android:layout_marginTop="166dp"
-                        android:text="Du planst die Teilnahme an einem Bodybuilding- oder Fitness-Wettkampf ? In Zusammenarbeit mit dem bekannten Body Coach Holger Gugg haben wir einen professionellen Leitfaden zur Wettkampfvorbereitung erstellt. Von A-Z findest Du hier wirklich alle Infos um am Tag X perfekt organisiert zu sein in Topform auf der Wettkampfbühne zu erscheinen.  Wettkampf Team-Engel mit Nino Longo und Christian Engel"
+                        android:text="@string/du_planst_die_teilnahme_an_einem_bodybuilding_oder_fitness_wettkampf_in_zusammenarbeit_mit_dem_bekannten_body_coach_holger_gugg_haben_wir_einen_professionellen_leitfaden_zur_wettkampfvorbereitung_erstellt_von_a_z_findest_du_hier_wirklich_alle_infos_um_am_tag_x_perfekt_organisiert_zu_sein_in_topform_auf_der_wettkampfb_hne_zu_erscheinen_wettkampf_team_engel_mit_nino_longo_und_christian_engel"
                         android:textColor="#000000"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -13,16 +13,15 @@ data class OperatingHours(
     override fun toString(): String {
 
         return """
-            Öffnungszeiten: 
+           Öffnungszeiten: 
             
-           Montag: $montag
-           Dienstag: $dienstag
-           Mittwoch: $mittwoch
+           Montag:     $montag
+           Dienstag:   $dienstag
+           Mittwoch:   $mittwoch
            Donnerstag: $donnerstag
-           Freitag: $freitag 
-           Samstag: $samstag
-           Sonntag: $sonntag
-
+           Freitag:    $freitag 
+           Samstag:    $samstag
+           Sonntag:    $sonntag
 
         """.trimIndent()
 

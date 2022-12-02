@@ -51,10 +51,7 @@
                         android:layout_width="347dp"
                         android:layout_height="0dp"
                         android:layout_marginTop="168dp"
-                        android:text="Die folgenden Informationen verschaffen Ihnen einen ersten Eindruck von unserer Abteilung. Gerne können Sie uns auch anschreiben, anrufen oder einfach vorbeischauen.
-Die Tennisanlage befindet sich auf einem großem Sportgelände in Wilmersdorf im Bereich Forckenbeckstraße, Cunostraße und Fritz-Wildung-Straße. Der Eingang zur Anlage und zum Clubhaus liegt in der Cunostraße 28 zwischen der Ruhemann-Sporthalle und der Tennishalle.
-Wir wünschen uns allerdings nicht nur neue Mitglieder, die ihre Beiträge pünktlich bezahlen. Unser Interesse gilt vor allem jenen, die auch aktiv am Clubleben teilnehmen möchten. Sollte beides auf Sie zutreffen, freuen wir uns über Ihre Bewerbung per Brief oder E-Mail an den BSC oder einen der Ansprechpartner.
-"
+                        android:text="@string/die_folgenden_informationen_verschaffen_ihnen_einen_ersten_eindruck_von_unserer_abteilung_gerne_k_nnen_sie_uns_auch_anschreiben_anrufen_oder_einfach_vorbeischauen_die_tennisanlage_befindet_sich_auf_einem_gro_em_sportgel_nde_in_wilmersdorf_im_bereich_forckenbeckstra_e_cunostra_e_und_fritz_wildung_stra_e_der_eingang_zur_anlage_und_zum_clubhaus_liegt_in_der_cunostra_e_28_zwischen_der_ruhemann_sporthalle_und_der_tennishalle_wir_w_nschen_uns_allerdings_nicht_nur_neue_mitglieder_die_ihre_beitr_ge_p_nktlich_bezahlen_unser_interesse_gilt_vor_allem_jenen_die_auch_aktiv_am_clubleben_teilnehmen_m_chten_sollte_beides_auf_sie_zutreffen_freuen_wir_uns_ber_ihre_bewerbung_per_brief_oder_e_mail_an_den_bsc_oder_einen_der_ansprechpartner"
                         android:textColor="#000000"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

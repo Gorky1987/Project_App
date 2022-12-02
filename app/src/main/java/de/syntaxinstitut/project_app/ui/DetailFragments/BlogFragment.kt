@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import de.syntaxinstitut.project_app.MainActivity
 import de.syntaxinstitut.project_app.MainViewModel
+import de.syntaxinstitut.project_app.data.datamodels.Blog
 import de.syntaxinstitut.project_app.databinding.FragmentBlogBinding
 import de.syntaxinstitut.project_app.util.BlogAdapter
 
@@ -22,6 +23,11 @@ class BlogFragment : Fragment() {
 
     private lateinit var navController: NavController
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        (activity as MainActivity).showUI()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +35,7 @@ class BlogFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBlogBinding.inflate(
-            inflater,  container, false
+            inflater, container, false
         )
         // Inflate the layout for this fragment
         return binding.root
@@ -38,21 +44,19 @@ class BlogFragment : Fragment() {
     }
 
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        (activity as MainActivity).showUI()
-val blogAdapter = BlogAdapter(listOf())
 
-    viewModel.blogList.observe(viewLifecycleOwner){
-        blogAdapter.submitList(it)
-    }
+        val blogAdapter = BlogAdapter(listOf())
+
+        viewModel.blogList.observe(viewLifecycleOwner) {
+            blogAdapter.submitList(it)
+        }
 
         binding.blogRecycler.adapter = blogAdapter
 
-        binding.blogRecycler.setHasFixedSize(true)
+
     }
 }

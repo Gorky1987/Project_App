@@ -18,23 +18,24 @@ import org.w3c.dom.Text
 class SearchAdapter( private var dataset : List<GymSearch>):RecyclerView.Adapter<SearchAdapter.ItemViewHolder>() {
 
 
-
+// der Adapter braucht den Context um auf String Resourcen zuzugreifen
 
     private lateinit var binding: ActivityMainBinding
 
-    // Inhalt des Viewholders
+    // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
       //  val card : ConstraintLayout = view.findViewById(R.id.searchItemLayout)
-        val titel : TextView = view.findViewById(R.id.tv_search_titel)
-        val subTitel : TextView = view.findViewById(R.id.tv_search_subText)
+        val itemTitel : TextView = view.findViewById(R.id.tv_search_titel)
+        val operatingHours : TextView = view.findViewById(R.id.tv_search_subText)
         val address : TextView = view.findViewById(R.id.tv_search_adress)
         val itemImg : ImageView = view.findViewById(R.id.iv_search_img)
         val rating : TextView = view.findViewById(R.id.tv_rating)
+        val phoneNumber: TextView = view.findViewById(R.id.tv_phone)
     }
 
 
     // VIEWHOLDER
-
+    // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         // das itemLayout wird gebaut
@@ -59,10 +60,11 @@ class SearchAdapter( private var dataset : List<GymSearch>):RecyclerView.Adapter
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.titel.text = item.title
-        holder.subTitel.text = item.operating_hours.toString()
+        holder.itemTitel.text = item.title
+        holder.operatingHours.text = item.operating_hours.toString()
         holder.address.text = item.address
         holder.rating.text = item.rating.toString()
+        holder.phoneNumber.text = item.phone
         holder.itemImg.load(item.thumbnail)
 
     }

@@ -6,6 +6,7 @@ data class GymSearch(
     val rating : Double = 0.0,
     val address :String = "",
     val operating_hours : OperatingHours = OperatingHours(),
-    val thumbnail :String = ""
+    val thumbnail :String = "",
+    val phone :String = ""
 
 )

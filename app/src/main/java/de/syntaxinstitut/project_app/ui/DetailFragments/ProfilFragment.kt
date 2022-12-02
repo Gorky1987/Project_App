@@ -1,17 +1,22 @@
 package de.syntaxinstitut.project_app.ui.DetailFragments
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import coil.load
 import de.syntaxinstitut.project_app.MainActivity
 import de.syntaxinstitut.project_app.MainViewModel
 import de.syntaxinstitut.project_app.R
+import de.syntaxinstitut.project_app.databinding.FragmentGymDifferenceBinding
 import de.syntaxinstitut.project_app.databinding.FragmentProfilBinding
+import de.syntaxinstitut.project_app.databinding.FragmentSearchBinding
 
 
 class ProfilFragment : Fragment() {
@@ -23,7 +28,12 @@ class ProfilFragment : Fragment() {
     private lateinit var navController: NavController
 
 
-
+    private val getContent =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            if (uri != null) {
+                viewModel.uploadImage(uri)
+            }
+        }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -36,17 +46,48 @@ class ProfilFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false)
+        binding = FragmentProfilBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
 
 
+        viewModel.member.observe(
+            viewLifecycleOwner, Observer {
+                if (it != null) {
+                    binding.tvName.text = it.name
 
-    viewModel.member.observe(
-        viewLifecycleOwner, Observer{
-            binding.tvName.text = it.name
-        }
-    )
+                    binding.userImage.load(it.image) {
+                        error(resources.getDrawable(R.drawable.profil_image_default))
+                    }
+                }
+            }
+        )
+
+        viewModel.currentUser.observe(
+            viewLifecycleOwner, Observer {
+                binding.tvEmailInput.text = it?.email
+
+            }
+        )
+
+      // viewModel.currentUser.observe(
+       //    viewLifecycleOwner,
+     //   ) {
+       //     binding.tvBirthdayInput.setOnCapturedPointerListener()
+     //   }
+
+
+         binding.uploadImage.setOnClickListener {
+             getContent.launch("image/*")
+         }
 
     }
+
+
 }

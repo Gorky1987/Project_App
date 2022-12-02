@@ -62,11 +62,13 @@ class Repository(private val database: BlogDatabase) {
     fun initialBlog(): List<Blog> {
         return listOf(
             Blog(
-                1, "Blog #1", "Personal Trainer", "Aufgaben eines..-",
-                "Zu Beachten:", "                                                   \n" +
-                        "                                                                     \n" +
+                1,
+                R.drawable.blog_img_01,
+                "Blog #1",
+                "Personal Trainer",
+                "Aufgaben eines...",
+                "Zu Beachten:",
                         "Aufgaben eines Fitnesstrainers\n" +
-                        "\n" +
                         "\n" +
                         "Der Fitnesstrainer hat ein breitgefächertes Spektrum an Aufgaben und Tätigkeiten. \n" +
                         "Er sollte selbstverständlich sehr kundenorientiert sein und hat viel Kontakt mir den Personen, die man trainiert. \n" +
@@ -91,24 +93,21 @@ class Repository(private val database: BlogDatabase) {
                         "Der Fitnesstrainer hilft den Leuten, diese Ziele zu erreichen. \n" +
                         "#Motivation während dem Training spielt dabei eine große Rolle, aber auch generelle Tipps und ein individuell erstellter Ernährungsplan soll helfen.\n" +
                         "\n" +
-                        "\n",
-                R.drawable.blog_img_01
-            ),
-
-            Blog(
+                        "\n"
+            ), Blog(
                 2,
+                R.drawable.blog_img_02,
                 "Blog #2",
                 "Mobility Training",
-                "was ist es?",
+                "wie wichtig Flexibilität...",
                 "Was ist Mobility Training?",
                 "\n" +
-                        "Mobility Training kombiniert verschiedene Beweglichkeitsübungen, die den Bewegungsradius deines Körpers vergrößern. Dazu gehören Flexibilität, Gleichgewicht, Geschmeidigkeit und Kraft. Die Kombination ist der beste Weg, um Verletzungen vorzubeugen. \n" +
+                        "Mobility Training kombiniert verschiedene Beweglichkeitsübungen, die den Bewegungsradius deines Körpers vergrößern. Dazu gehören Flexibilität, Gleichgewicht, Geschmeidigkeit und Kraft. Die Kombination ist der beste Weg, um Verletzungen vorzubeugen.\n" +
                         "\n" +
                         "Ein riesiger Vorteil von Mobility Training ist seine Vielfalt. Du kannst es einfach an deine Bedürfnisse und deine Routine anpassen. Eine pre-Workout Beweglichkeitsübung, ein 10-minütiges Ganzkörpertraining, oder eine vollständige Yoga-Session – Entscheide du, was du gerade brauchst.\n" +
                         "\n" +
                         "Dabei ist es wichtig, immer auf den Körper zu hören. Integriere Mobility Training langsam in deine Routine. Beginne mit ein oder zwei Körperteilen, anstatt direkt ein Ganzkörper Mobility Training durchzuziehen.\n" +
                         "Folgst EVO Fitness Instagram. \n" +
-                        "\n" +
                         "\n" +
                         "\n" +
                         "Was ist der Unterschied zwischen Beweglichkeit und Flexibilität? \n" +
@@ -118,9 +117,9 @@ class Repository(private val database: BlogDatabase) {
                         "mit denen du deine Bewegungsfreiheit erhöhst, die Gelenke umgebenden Muskeln kontrollierst und die dir helfen, dich aktiver bewegen zu können.\n" +
                         "\n" +
                         "Flexibilität hingegen ist das Dehnen und Verlängern unserer Muskeln. Die Dehnbarkeit und Länge deines Bindegewebes zu erhöhen hilft dem Körper, eine Vielzahl an Bewegungen ohne Verletzungen, Steifheit und Schmerzen auszuführen",
-                R.drawable.blog_img_02
             ), Blog(
                 3,
+                R.drawable.blog_img_03,
                 "Blog #3",
                 "Gesunde & nachhaltige Ernährung",
                 "kann auch für die Umwelt gut sein...",
@@ -149,9 +148,9 @@ class Repository(private val database: BlogDatabase) {
                         "Für die Natur ist das gut, da bei biologischem Anbau weniger Pestizide verwendet werden, die Insekten schaden und ins Grundwasser gelangen. Auch die Tierhaltung ist unter Bio Standards viel umweltfreundlicher. Dazu findest Du noch mehr Info in unserem Beitrag zu Solidarischer Landwirtschaft.\n" +
                         "\n" +
                         "Für Dich ist das gut, da pestizidfreies Obst und Gemüse gesünder ist. Bei den tierischen Produkten nimmst Du bei der Bio-Variante außerdem weniger Antibiotika zu Dir.\n",
-                R.drawable.blog_img_03
             ), Blog(
                 4,
+                R.drawable.blog_img_04,
                 "Blog #4",
                 "Cardiovaskuläres Training",
                 "oft unterschätzt...",
@@ -173,8 +172,8 @@ class Repository(private val database: BlogDatabase) {
                         "  -  Die Blutkörperchen können sich vermehren, sodass mehr Sauerstoff transportiert wird.\n" +
                         "  -  Durch eine bessere Durchblutung werden Organe und insbesondere auch das Gehirn mit mehr Sauerstoff versorgt, sodass die Konzentrationsfähigkeit gesteigert werden kann.\n" +
                         "  -  Zudem stärkt Cardio Training das Immunsystem und schützt dadurch vor Krankheiten. ",
-                R.drawable.blog_img_04
-            )
+
+                )
         )
     }
 
@@ -235,8 +234,8 @@ class Repository(private val database: BlogDatabase) {
             ),
             hView_Item(
                 6,
-                "Blog #01",
-                "the personal...",
+                "Blog #00",
+                "Blogger Guidline",
                 R.drawable.gymguide_full_logo,
                 R.drawable._5_blog
             ),
@@ -256,7 +255,7 @@ class Repository(private val database: BlogDatabase) {
 
     suspend fun getGymSearch(plz: String) {
         try {
-            val result = api.retrofitService.getGymSearch("Gym+$plz")
+            val result = api.retrofitService.getGymSearch("Fitnessstudio+$plz")
             _gymSearch.value = result.searchList
         } catch (e: Exception) {
             Log.e(ContentValues.TAG, "Error loading Gym results from API: $e")

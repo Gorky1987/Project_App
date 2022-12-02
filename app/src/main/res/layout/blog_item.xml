@@ -12,10 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="290dp"
         android:backgroundTint="#000000"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Blog #01" />
@@ -47,8 +49,6 @@
         android:layout_marginStart="8dp"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
-        app:layout_constraintEnd_toEndOf="@+id/tv_Titel"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/iv_icon"
         app:layout_constraintTop_toBottomOf="@+id/tv_Titel"
         tools:text="SubTitel" />
@@ -57,53 +57,48 @@
         android:id="@+id/tv_content_titel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/iv_titel_Image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_titel_Image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_titel_Image"
         tools:text="Content Titel" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/iv_titel_Image"
+        app:layout_constraintStart_toStartOf="@+id/iv_titel_Image"
         app:layout_constraintTop_toBottomOf="@+id/tv_content_titel"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/underline"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="#FF9800"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_icon">
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <ImageView
+        android:id="@+id/iv_titel_Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/underline">
-
-        <ImageView
-            android:id="@+id/iv_titel_Image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/personal_trainer_2" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/underline"
+        app:srcCompat="@drawable/personal_trainer_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

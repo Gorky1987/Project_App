@@ -11,6 +11,9 @@ import de.syntaxinstitut.project_app.R
 import de.syntaxinstitut.project_app.data.datamodels.Blog
 import de.syntaxinstitut.project_app.databinding.ActivityMainBinding
 
+
+// der Adapter braucht den Context um auf String Resourcen zuzugreifen
+// und die Liste um sie für die RecyclerView vorzubereiten
 class BlogAdapter( private var dataset : List<Blog>):RecyclerView.Adapter<BlogAdapter.ItemViewHolder>() {
 
 
@@ -18,16 +21,16 @@ class BlogAdapter( private var dataset : List<Blog>):RecyclerView.Adapter<BlogAd
 
     private lateinit var binding: ActivityMainBinding
 
-    // Inhalt des Viewholders
+    // der ViewHolder weiß welche Teile des Layouts beim Recycling angepasst werden
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val card : ConstraintLayout = view.findViewById(R.id.blog_layout)
+        // val card : ConstraintLayout = view.findViewById(R.id.blog_layout)
         val header : TextView = view.findViewById(R.id.tv_blog_number)
-        val Titel : TextView = view.findViewById(R.id.tv_Titel)
+        val titel : TextView = view.findViewById(R.id.tv_Titel)
         val subTitel : TextView = view.findViewById(R.id.tv_SubTitel)
         val contentTitel : TextView = view.findViewById(R.id.tv_content_titel)
         val content : TextView = view.findViewById(R.id.tv_content)
         // val iconImg : ImageView = view.findViewById(R.id.iv_icon)
-        val itemImg : ImageView = view.findViewById(R.id.iv_titel_Image)
+        val conetenImg : ImageView = view.findViewById(R.id.iv_titel_Image)
 
     }
 
@@ -59,12 +62,13 @@ class BlogAdapter( private var dataset : List<Blog>):RecyclerView.Adapter<BlogAd
         val item = dataset[position]
 
         holder.header.text = item.blog_number
-        holder.Titel.text = item.titel
+        holder.titel.text = item.titel
         holder.subTitel.text = item.subTitel
         holder.contentTitel.text = item.content_titel
         holder.content.text = item.content
         //      item.icon?.let { holder.iconImg.setImageResource(it) }
-        item.titel_Image?.let { holder.itemImg.setImageResource(it) }
+        // item.titel_Image?.let { holder.itemImg.setImageResource(it) }
+        holder.conetenImg.setImageResource(item.titel_Image)
 
 
 

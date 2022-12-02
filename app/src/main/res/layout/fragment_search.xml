@@ -14,19 +14,22 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/searchbackground02">
 
             <EditText
                 android:id="@+id/editTextNumber"
-                android:layout_width="242dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="291dp"
+                android:layout_height="38dp"
+                android:backgroundTint="#B8B8B8"
                 android:ems="10"
                 android:inputType="number"
+                android:shadowColor="#FF9800"
+                android:textColorLink="#FF9800"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.293"
+                app:layout_constraintHorizontal_bias="0.291"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -40,18 +43,22 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
-                tools:listitem="@layout/search_item" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:listitem="@layout/search_item"
+                tools:itemCount="5"/>
 
             <ImageButton
                 android:id="@+id/btn_gymSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="4dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
                 app:layout_constraintStart_toEndOf="@+id/editTextNumber"
                 app:layout_constraintTop_toTopOf="@+id/editTextNumber"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/ic_baseline_search_24"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -64,6 +71,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gib bitte eine Plz ein:              (5 Ziffern)"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Im welchen Ort suchst du?"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

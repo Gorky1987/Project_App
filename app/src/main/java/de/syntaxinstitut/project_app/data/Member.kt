@@ -6,6 +6,9 @@ data class Member(
     @DocumentId
     val id: String = "",
     val name: String = "",
+    val image: String = "",
+    val birthday: String = "",
+    val hometown: String = "",
 )
 
 

@@ -10,7 +10,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.project_app.MainActivity
 import de.syntaxinstitut.project_app.MainViewModel
-import de.syntaxinstitut.project_app.R
 import de.syntaxinstitut.project_app.databinding.FragmentGymDifferenceBinding
 
 
@@ -40,16 +39,29 @@ class GymDifferenceFragment : Fragment() {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.IV1.setOnClickListener(){
+        binding.IV1.setOnClickListener() {
             findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToFamilyGymFragment())
         }
 
-        binding.IV2.setOnClickListener(){
+        binding.IV2.setOnClickListener() {
             findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToLuxuryGymFragment())
         }
+        binding.IV03.setOnClickListener() {
+            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToDiscountFragment())
+        }
+
+        binding.IV04.setOnClickListener() {
+            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToWomansGymFragment())
+        }
+        binding.IV05.setOnClickListener() {
+            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToBodybuilderGymFragment())
+        }
+        binding.IV06.setOnClickListener() {
+            findNavController().navigate(GymDifferenceFragmentDirections.actionGymDifferenceFragmentToSportClubFragment())
+        }
+
     }
 }

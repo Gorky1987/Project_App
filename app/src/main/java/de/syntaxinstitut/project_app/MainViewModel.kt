@@ -1,6 +1,7 @@
 package de.syntaxinstitut.project_app
 
 import android.app.Application
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -9,6 +10,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import de.syntaxinstitut.project_app.data.GymSearchApi
 import de.syntaxinstitut.project_app.data.Member
 import de.syntaxinstitut.project_app.data.datamodels.Blog
@@ -21,10 +23,12 @@ import kotlinx.coroutines.launch
 
 
 const val TAG = "MainViewModel"
+
 /**
  * Das MainViewModel
  */
 
+// hier wird statt ViewModel AndroidViewModel verwendet um den applicationcontext zu bekommen
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
@@ -49,6 +53,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     // Kommunikationspunkt mit der FirebaseAuth
     private val firebaseAuth = FirebaseAuth.getInstance()
+
+    // Kommunikationspunkt mit Firebase Storage
+    private val storage = FirebaseStorage.getInstance()
+    private val storageRef = storage.reference
 
 
     // currentuser ist null wenn niemand eingeloggt ist
@@ -100,7 +108,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    // hier wird userid, nickname und level in die Firestore Datenbank gespeichert
+    // hier wird nickname in die Firestore Datenbank gespeichert
     private fun setName(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
             .set(member)
@@ -129,22 +137,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _currentUser.value = firebaseAuth.currentUser
     }
 
-    // hier werden Spielerdaten mittles userid aus dem Firestore geladen
-    fun getPlayerData() {
-        db.collection("user").document(currentUser.value!!.uid)
-            .get().addOnSuccessListener {
-                _member.value = it.toObject(Member::class.java)
-            }
-            .addOnFailureListener {
-                Log.e(TAG, "Error reading document: $it")
-            }
-    }
-
 
     fun getMember() {
         db.collection("user").document(currentUser.value!!.uid).get().addOnSuccessListener {
             _member.value = it.toObject(Member::class.java)
         }
+            .addOnFailureListener {
+                Log.e(TAG, "Error reading document: $it")
+            }
     }
 
 
@@ -167,12 +167,44 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     var gymSearch = repository.gymSearch
 
-    fun loadGymSearch(plz : String) {
+    fun loadGymSearch(plz: String) {
         viewModelScope.launch {
             repository.getGymSearch(plz)
         }
+    }
 
+    fun uploadImage(uri: Uri) {
+        val imageRef = storageRef.child("images/${currentUser.value?.uid}/profilePic")
+        val uploadTask = imageRef.putFile(uri)
 
+        uploadTask.addOnFailureListener {
+            Log.e("MainViewModel", "upload failed: $it")
+        }
+
+        uploadTask.addOnSuccessListener {
+            Log.e("MainViewModel", "upload worked")
+        }
+
+        uploadTask.addOnCompleteListener {
+            imageRef.downloadUrl.addOnCompleteListener {
+                if (it.isSuccessful) {
+                    setImage(it.result)
+                }
+            }
+        }
+
+    }
+    private fun setImage(uri: Uri) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .update("image", uri.toString())
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating player\n${it.localizedMessage}"
+                _toast.value = null
+            }
+            .addOnCompleteListener {
+                getMember()
+            }
     }
 }
 

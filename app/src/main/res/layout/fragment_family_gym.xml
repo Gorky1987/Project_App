@@ -42,12 +42,7 @@
                 android:layout_width="360dp"
                 android:layout_height="287dp"
                 android:layout_marginTop="140dp"
-                android:text="Fitness Studios in familiärer Umgebung,
-             sind zu Meist die Klassiker unter den Gyms.
-             Solcher Studios sind bis heute noch meist verbreitet und nicht selten gerade in ländichen Regionen angesiedelt.
-
-             Diese Form der Fitnessstudios hat was nostalgisches und erinnert oft an die späten 80er/ frühen 90er Jahre.
-             Hier kennen sich die Mitglieder untereinander und sitzen gerne mal nach dem Sport auf einen gemütlichen Plausch zusammen.   Die Fachexpertiese der Trainer variert extrem – vom Basiswissen Rehasport bis zum allumfassenden Fachmann und Wettkampfvorbereiter kann hier alles möglich sein. "
+                android:text="@string/fitness_studios_in_famili_rer_umgebung_sind_zu_meist_die_klassiker_unter_den_gyms_solcher_studios_sind_bis_heute_noch_meist_verbreitet_und_nicht_selten_gerade_in_l_ndichen_regionen_angesiedelt_diese_form_der_fitnessstudios_hat_was_nostalgisches_und_erinnert_oft_an_die_sp_ten_80er_fr_hen_90er_jahre_hier_kennen_sich_die_mitglieder_untereinander_und_sitzen_gerne_mal_nach_dem_sport_auf_einen_gem_tlichen_plausch_zusammen_die_fachexpertiese_der_trainer_variert_extrem_vom_basiswissen_rehasport_bis_zum_allumfassenden_fachmann_und_wettkampfvorbereiter_kann_hier_alles_m_glich_sein"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.49"
                 app:layout_constraintStart_toStartOf="parent"
