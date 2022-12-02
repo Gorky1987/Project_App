@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_Wohnort_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Name" />
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_birthday_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,11 +172,11 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView8"
+                        app:layout_constraintStart_toStartOf="@+id/tv_bio_input"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_bio_input"
                         android:layout_width="363dp"
                         android:layout_height="wrap_content"
                         android:text="Lorem ipsum dolor sit amet, consectetur adipi scing elit. Tortor turpis sodales nulla velit. Nunc cum vitae, rhoncus leo id. Volutpat  Duis tinunt pretium luctus pulvinar pretium."

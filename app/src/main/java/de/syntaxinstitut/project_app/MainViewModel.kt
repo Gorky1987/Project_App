@@ -49,12 +49,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
     // Kommunikationspunkt mit der Firestore Datenbank
-    private val db = FirebaseFirestore.getInstance()
+     val db = FirebaseFirestore.getInstance()
 
     // Kommunikationspunkt mit der FirebaseAuth
-    private val firebaseAuth = FirebaseAuth.getInstance()
+     val firebaseAuth = FirebaseAuth.getInstance()
 
     // Kommunikationspunkt mit Firebase Storage
+
     private val storage = FirebaseStorage.getInstance()
     private val storageRef = storage.reference
 
@@ -63,6 +64,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser?>
         get() = _currentUser
+
+
 
     // Player enthält alle relevanten Daten aus dem Firestore
     private val _member = MutableLiveData<Member>()
@@ -111,13 +114,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // hier wird nickname in die Firestore Datenbank gespeichert
     private fun setName(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
-            .set(member)
+            .set(member.name)
             .addOnFailureListener {
                 Log.w(TAG, "Error writing document: $it")
-                _toast.value = "error creating player\n${it.localizedMessage}"
-
+                _toast.value = "error creating birthday\n${it.localizedMessage}"
             }
     }
+
+     fun setBirthday(member: Member) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .set(member.birthday)
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating Birthday\n${it.localizedMessage}"
+            }
+    }
+
+
+
+
+
+
 
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -146,6 +163,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Error reading document: $it")
             }
     }
+
+
 
 
     fun getAllBlogs(): List<Blog> {

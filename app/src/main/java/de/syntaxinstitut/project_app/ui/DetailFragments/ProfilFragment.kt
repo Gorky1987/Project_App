@@ -1,10 +1,12 @@
 package de.syntaxinstitut.project_app.ui.DetailFragments
 
+import android.app.AlertDialog
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -14,9 +16,7 @@ import coil.load
 import de.syntaxinstitut.project_app.MainActivity
 import de.syntaxinstitut.project_app.MainViewModel
 import de.syntaxinstitut.project_app.R
-import de.syntaxinstitut.project_app.databinding.FragmentGymDifferenceBinding
 import de.syntaxinstitut.project_app.databinding.FragmentProfilBinding
-import de.syntaxinstitut.project_app.databinding.FragmentSearchBinding
 
 
 class ProfilFragment : Fragment() {
@@ -75,12 +75,30 @@ class ProfilFragment : Fragment() {
 
             }
         )
+     //   viewModel.db.collection("user").document(currentUser.value!!.uid).get(member)
+     //       viewLifecycleOwner, Observer {
+     //           binding.tvBirthdayInput.text = it.birthday
+       //     }
+       // )
 
-      // viewModel.currentUser.observe(
-       //    viewLifecycleOwner,
-     //   ) {
-       //     binding.tvBirthdayInput.setOnCapturedPointerListener()
-     //   }
+         /* binding.tvBirthdayInput.setOnClickListener{
+
+              val et_new = EditText(this)
+              et_new.setText("Trage dein Geburtsdatum ein")
+
+              val meldung = AlertDialog.Builder(this)
+              meldung.setMessage("Trage dein Geburtsdatum ein")
+              meldung.setPositiveButton("Speichern") { _, _ ->
+
+                  binding.tvBirthdayInput.text = et_new.text
+
+
+                  viewModel.setBirthday()*/
+
+
+
+
+
 
 
          binding.uploadImage.setOnClickListener {

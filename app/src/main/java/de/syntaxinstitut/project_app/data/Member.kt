@@ -9,6 +9,7 @@ data class Member(
     val image: String = "",
     val birthday: String = "",
     val hometown: String = "",
+    val bio : String = ""
 )
 
 

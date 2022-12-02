@@ -91,7 +91,7 @@ dependencies {
     implementation "androidx.core:core-splashscreen:1.0.0"
 
     // Google
-    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
@@ -99,8 +99,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
 
     // Firebase UI
-    implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
-    implementation 'com.firebaseui:firebase-ui-database:8.0.1'
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.2'
     implementation 'com.google.firebase:firebase-storage-ktx'
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
 }
