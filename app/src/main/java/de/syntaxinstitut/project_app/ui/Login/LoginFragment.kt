@@ -1,7 +1,6 @@
 package de.syntaxinstitut.project_app.ui.Login
 
 import android.app.AlertDialog
-import android.app.ProgressDialog.show
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle

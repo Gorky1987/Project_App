@@ -67,7 +67,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
 
-    // Player enthält alle relevanten Daten aus dem Firestore
+    // Member enthält alle relevanten Daten aus dem Firestore
     private val _member = MutableLiveData<Member>()
     val member: LiveData<Member>
         get() = _member
@@ -114,7 +114,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // hier wird nickname in die Firestore Datenbank gespeichert
     private fun setName(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
-            .set(member.name)
+            .set(member)
             .addOnFailureListener {
                 Log.w(TAG, "Error writing document: $it")
                 _toast.value = "error creating birthday\n${it.localizedMessage}"
@@ -123,7 +123,26 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
      fun setBirthday(member: Member) {
         db.collection("user").document(currentUser.value!!.uid)
-            .set(member.birthday)
+            .set(member)
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating Birthday\n${it.localizedMessage}"
+                _toast.value = null
+            }
+    }
+    fun setHometown(member: Member) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .set(member)
+            .addOnFailureListener {
+                Log.w(TAG, "Error writing document: $it")
+                _toast.value = "error creating Birthday\n${it.localizedMessage}"
+                _toast.value = null
+            }
+    }
+
+    fun setBIO(member: Member) {
+        db.collection("user").document(currentUser.value!!.uid)
+            .set(member)
             .addOnFailureListener {
                 Log.w(TAG, "Error writing document: $it")
                 _toast.value = "error creating Birthday\n${it.localizedMessage}"
@@ -154,9 +173,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _currentUser.value = firebaseAuth.currentUser
     }
 
+    // hier werden Userdaten mittles userid aus dem Firestore geladen
 
     fun getMember() {
-        db.collection("user").document(currentUser.value!!.uid).get().addOnSuccessListener {
+        db.collection("user").document(currentUser.value!!.uid)
+            .get().addOnSuccessListener {
             _member.value = it.toObject(Member::class.java)
         }
             .addOnFailureListener {

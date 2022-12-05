@@ -5,11 +5,14 @@ import com.google.firebase.firestore.DocumentId
 data class Member(
     @DocumentId
     val id: String = "",
-    val name: String = "",
-    val image: String = "",
-    val birthday: String = "",
-    val hometown: String = "",
-    val bio : String = ""
+    var name: String = "",
+    var image: String = "",
+    var birthday: String = "",
+    var hometown: String = "",
+    var bio : String = ""
+
+
 )
+
 
 

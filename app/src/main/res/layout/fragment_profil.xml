@@ -34,7 +34,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:text="TextView"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -71,9 +70,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
+                    android:clickable="false"
+                    android:focusable="true"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/user_image"
                     app:layout_constraintTop_toBottomOf="@+id/tv_birthday"
                     tools:ignore="TouchTargetSizeCheck"
@@ -134,6 +133,26 @@
                     app:srcCompat="@drawable/ic_baseline_file_upload_24"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+                <ImageButton
+                    android:id="@+id/btn_editBirthday"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_birthday"
+                    app:layout_constraintStart_toEndOf="@+id/tv_birthday"
+                    app:layout_constraintTop_toTopOf="@+id/tv_birthday"
+                    app:srcCompat="@drawable/ic_baseline_edit_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/btn_editHometown"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_Wohnort"
+                    app:layout_constraintStart_toEndOf="@+id/tv_Wohnort"
+                    app:layout_constraintTop_toTopOf="@+id/tv_Wohnort"
+                    app:srcCompat="@drawable/ic_baseline_edit_24"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -152,39 +171,37 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
                     android:layout_marginTop="1dp"
-                    android:layout_marginBottom="3dp"
                     android:background="@drawable/input_bg"
                     android:backgroundTint="#FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/iv_bio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="BIO"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_bio_input"
                         app:layout_constraintStart_toStartOf="@+id/tv_bio_input"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/tv_bio_input"
-                        android:layout_width="363dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipi scing elit. Tortor turpis sodales nulla velit. Nunc cum vitae, rhoncus leo id. Volutpat  Duis tinunt pretium luctus pulvinar pretium."
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
                         android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/cardView" />
+                        app:layout_constraintTop_toTopOf="@+id/cardView"
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipi scing elit. Tortor turpis sodales nulla velit. Nunc cum vitae, rhoncus leo id. Volutpat  Duis tinunt pretium luctus pulvinar pretium." />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView"
@@ -196,6 +213,18 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/iv_bio" />
+
+                    <ImageButton
+                        android:id="@+id/btn_editBio"
+                        android:layout_width="30dp"
+                        android:layout_height="28dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/ic_baseline_edit_24"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
