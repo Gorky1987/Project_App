@@ -3,63 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/dialoge_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/constraintLayout"
+        android:layout_width="354dp"
+        android:layout_height="216dp"
+        android:background="@drawable/frame_11"
+        android:backgroundTint="#0E1642"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="263dp"
-            android:layout_height="159dp"
+        <TextView
+            android:id="@+id/dialoge_text"
+            android:layout_width="0dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fadingEdge="horizontal"
+            android:text="something whent wrong with your eMail details, or you have a bad password. Please Sign-In again."
+            android:textColor="#CDC8C8"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/dialoge_header" />
 
-            <TextView
-                android:id="@+id/dialoge_text"
-                android:layout_width="222dp"
-                android:layout_height="91dp"
-                android:layout_marginBottom="16dp"
-                android:fadingEdge="horizontal"
-                android:text="something whent wrong with your eMail details, or you have a bad password. Please Sign-In again."
-                android:textColor="#CDC8C8"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.487"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/dialoge_header"
-                android:layout_width="221dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:text="Login failure:"
-                android:textColor="#FF9800"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/dialoge_text"
-                app:layout_constraintEnd_toEndOf="@+id/dialoge_text"
-                app:layout_constraintHorizontal_bias="0.117"
-                app:layout_constraintStart_toStartOf="@+id/dialoge_text" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="290dp"
-                android:layout_height="167dp"
-                android:adjustViewBounds="true"
-                android:backgroundTint="#130404"
-                android:contentDescription="@string/todo"
-                android:scaleType="fitXY"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/frame_11" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/dialoge_header"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="22dp"
+            android:text="Login failure:"
+            android:textColor="#FF9800"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/dialoge_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </layout>
 

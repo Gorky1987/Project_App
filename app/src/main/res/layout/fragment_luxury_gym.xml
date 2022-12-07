@@ -12,67 +12,79 @@
         android:layout_height="match_parent"
         tools:context=".FamilyGymFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView30"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/unterschiede_02"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/textView40"
-                android:layout_width="175dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:text="Luxury Gym"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/imageView30"
-                app:layout_constraintTop_toTopOf="@+id/imageView30" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="360dp"
-                android:layout_height="287dp"
-                android:layout_marginTop="40dp"
-                android:text="@string/ein_wort_wie_ein_versprechen_es_klingt_nach_entspannung_auf_f_nf_sterne_niveau_genauso_sehen_sie_auch_aus_die_neuen_wellnessclubs_der_luxusklasse_die_mit_traditionellen_fitnessstudios_nur_wenig_gemeinsam_haben_in_diesen_lifestyle_tempeln_relaxt_man_in_stylischem_ambiente_auf_designersofas_und_genie_t_das_zarte_aroma_das_edle_duftkerzen_verbreiten_die_mitglieder_trainieren_an_modernsten_ger_ten_feilen_mit_der_ern_hrungsberaterin_an_ihrem_speiseplan_g_nnen_sich_im_gourmetrestaurant_einen_snack_und_lassen_sich_im_saunabereich_verw_hnen_mit_spa_treatments_von_der_hamam_bis_zur_ayurveda_massage_in_london_wurde_das_konzept_der_edlen_spa_und_health_gyms_erfunden_wir_stellen_die_f_nf_deutschen_top_adressen_vor"
-                android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.49"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView40" />
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/unterschiede_02"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/imageButtonBack2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_baseline_arrow_back_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.797"
-                app:layout_constraintStart_toEndOf="@+id/textView40"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="175dp"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Luxury Gym"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/imageView30"
+                        app:layout_constraintTop_toTopOf="@+id/imageView30" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="359dp"
-                android:layout_height="290dp"
-                android:layout_marginTop="284dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/luxury_gym01"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView5" />
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="360dp"
+                        android:layout_height="287dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/ein_wort_wie_ein_versprechen_es_klingt_nach_entspannung_auf_f_nf_sterne_niveau_genauso_sehen_sie_auch_aus_die_neuen_wellnessclubs_der_luxusklasse_die_mit_traditionellen_fitnessstudios_nur_wenig_gemeinsam_haben_in_diesen_lifestyle_tempeln_relaxt_man_in_stylischem_ambiente_auf_designersofas_und_genie_t_das_zarte_aroma_das_edle_duftkerzen_verbreiten_die_mitglieder_trainieren_an_modernsten_ger_ten_feilen_mit_der_ern_hrungsberaterin_an_ihrem_speiseplan_g_nnen_sich_im_gourmetrestaurant_einen_snack_und_lassen_sich_im_saunabereich_verw_hnen_mit_spa_treatments_von_der_hamam_bis_zur_ayurveda_massage_in_london_wurde_das_konzept_der_edlen_spa_und_health_gyms_erfunden_wir_stellen_die_f_nf_deutschen_top_adressen_vor"
+                        android:textColor="#000000"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.49"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageButton
+                        android:id="@+id/imageButtonBack2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.797"
+                        app:layout_constraintStart_toEndOf="@+id/textView40"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="359dp"
+                        android:layout_height="290dp"
+                        android:layout_marginTop="284dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/luxury_gym01"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+
     </FrameLayout>
 </layout>
